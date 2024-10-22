@@ -1,0 +1,8 @@
+r = int(input("aký je rok?"))
+m = int(input("aký je mesiac? (číslom)"))
+d = int(input("aký je deň? (číslom)"))
+rok = (r- 2009)
+mesiac = (m - 1)
+deň = (d - 1)
+hodina = float(input("koľko je hodín (napíš v tvare hod.min)"))
+print(" od zavedenia eura na slovensku uplynulo" , rok, "rokov" , mesiac, "mesiacov" , deň, "dni a " , hodina , "hodín")
