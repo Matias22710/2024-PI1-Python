@@ -1,0 +1,2 @@
+Vytvoriť program, ktorý vypíše moje iniciály, dĺžka strany jedého štvorca je 10 pixelov
+vykreslené pomocou štvorčekov zo súboru pixel_letters.jpg
