@@ -56,4 +56,4 @@ canavas.create_rectangle(120, 80, 110, 70, fill="red")
 tkinter.mainloop()
 
 
-# Dú - MR
+# Dú - MR - iniciály
