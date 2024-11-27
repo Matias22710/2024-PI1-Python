@@ -22,7 +22,7 @@ for i in range(100):
    #     farba = "green"
     
     if x < canvas_width / 2:
-        if y < canvas
+        if y < canvas...
 
     canvas.create_oval(x, y, x + a, y + a, fill=farba, width = 0)
 
