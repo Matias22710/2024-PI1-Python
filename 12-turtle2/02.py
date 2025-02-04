@@ -1,76 +1,66 @@
 import turtle
 t = turtle.Turtle()
 
-pocet = 1
-dlzka = 50 
-dlzkas = 35
-dlzkao = 20
-dlzkaok = 10
+x = 0
+y = 0 
+x1 = 0
 
+pocet1 = int(input("Zadaj počet domov a ulici:\n"))
+pocet = int(input("Zadaj počet ulíc v dedine:\n"))
+d = int(input("Zadaj veľkosť domov:\n"))
+farba = input("Zadaj farbu domov:\n")
+farba1 = input("Zadaj farbu striech:\n")
+t.pensize(2)
 
-def dom(d):
-    t.fillcolor("red")
-    t.begin_fill()
+def stvorec(d,farba):
+    t.fillcolor(farba)
     for i in range(4):
-        t.forward(dlzka)
-        t.left(90)
-    t.end_fill()
+     t.fd(d)
+     t.rt(90)
+     t.end_fill()
 
-for i in range(1):
-    dom(dlzka)
-    t.forward(dlzka)
-    t.left(90)
-    t.penup()
-    t.forward(dlzka)
-    t.pendown()
+def okno(d):
+    for i in range(4):
+        stvorec(d/4,"blue")
+        t.fd(d/2)
+        t.rt(90)
 
-    t.fillcolor("blue")
+def strecha(d,farba1):
+    t.fillcolor(farba1)
     t.begin_fill()
-    for i in range(1):
-        t.left(45)
-        t.forward(dlzkas)
-        t.left(90)
-        t.forward(dlzkas)
-    t.end_fill()
+    for i in range(3):
+        t.fd(d)
+        t.lt(120)
+        t.end_fill()
 
-    dom(dlzkas)
-    t.left(45)
-    t.forward(dlzkas)
-    t.left(90)
-    t.forward(dlzkas)
-    t.left(45)
-    t.penup()
-    t.forward(dlzka)
-    t.left(135)
-    t.forward(20)
-    t.right(45)
-    t.pendown()
-    t.forward(dlzkao)
-    t.left(90)
-    t.forward(dlzkao)
-    t.left(90)
-    t.forward(dlzkao)
-    t.left(90)
-    t.forward(dlzkao)
+def dom(d,farba,farba1,x,y):
+    stvorec(d,farba)
+    strecha(d,farba1)
+    t.fd(d/4)
+    t.rt(90)
+    t.pu()
+    t.fd(d/4)
+    t.lt(90)
+    t.pd()
+    okno(d)
 
-    t.fillcolor("white")
-    t.begin_fill()
-    for i in range(2):
-        t.forward(dlzkaok)
-        t.left(90)
-        t.forward(dlzkaok)
-        t.left(90)
-        t.forward(dlzkaok)
-        t.left(90)
-        t.forward(dlzkaok)
-        t.left(180)
-        t.forward(20)
-        t.right(180)
-        t.forward(dlzkaok)
-        t.right(90)
-        t.forward(dlzkaok)
-    t.end_fill()
+def ulica(d,farba,ulica1,pocet,x,y):
+    for i in range(pocet):
+        t.setpos(x,y)
+        t.pd()
+        dom(d,farba,farba1,x,y)
+        t.pu()
+        x += d + 10
 
-    
+def dedina(d,farba,farba1,pocet,x,y):
+    for i in range(pocet1):
+        t.pu()
+        x = x1
+        t.setpos(x,y)
+        t.pd()
+
+ulica(d,farba,farba1,pocet,x,y)
+
+dedina(d,farba,farba1,pocet,pocet1,x,y) 
 
 turtle.mainloop()
