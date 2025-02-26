@@ -33,7 +33,7 @@ def strecha(d,farba1):
         t.lt(120)
         t.end_fill()
 
-def dom(d,farba,farba1,x,y):
+def dom(d,farba,farba1):
     stvorec(d,farba)
     strecha(d,farba1)
     t.fd(d/4)
@@ -44,22 +44,22 @@ def dom(d,farba,farba1,x,y):
     t.pd()
     okno(d)
 
-def ulica(d,farba,ulica1,pocet,x,y):
+def ulica(d,farba,farba1,pocet,x,y):
     for i in range(pocet):
         t.setpos(x,y)
         t.pd()
-        dom(d,farba,farba1,x,y)
+        dom(d,farba,farba1)
         t.pu()
         x += d + 10
 
-def dedina(d,farba,farba1,pocet,x,y):
+def dedina(d,farba,farba1,pocet,pocet1,x,y):
     for i in range(pocet1):
+        ulica(d,farba,farba1,pocet,x,y)
         t.pu()
         x = x1
+        y += d*2
         t.setpos(x,y)
         t.pd()
-
-ulica(d,farba,farba1,pocet,x,y)
 
 dedina(d,farba,farba1,pocet,pocet1,x,y) 
 
