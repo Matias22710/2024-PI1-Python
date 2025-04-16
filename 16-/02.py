@@ -30,3 +30,16 @@ for teplota in teploty:
         print(f"{deň}. deň - {teplota}°C")
 
 # D.Ú. urob max(teplota) a min(teplota) bez funkcií
+
+max = 0
+for teplota in teploty:
+    if teplota > max:
+        max = teplota
+print (f"Najviššia teplota bola {max}°C")
+
+
+min = 30
+for teplota in teploty:
+    if teplota < min:
+        min = teplota
+print (f"najnižšia teplota bola {min}°C")
